@@ -2,7 +2,7 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import { sync } from 'vuex-router-sync'
-import index from './views/index'
+import App from './App'
 import router from './router'
 import store from './store'
 import auth from './auth'
@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
 const app = new Vue({
   router,
   store,
-  ...index
+  ...App
 })
 
 export { app, router, store }
