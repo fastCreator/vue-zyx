@@ -21,7 +21,8 @@ const getComponent = name => require(`../views/${name}.vue`)
 const routers = [
   {
     path: '/',
-    component: index
+    component: index,
+    children:[]
   },
   {path: '/login', name:'login',component: login, beforeEnter: loginSuccess  }
 ]
@@ -32,7 +33,7 @@ const routers = [
 nav.forEach((mod) => {
   const subMenus = mod.children
   subMenus.forEach((subMenu) => {
-    routers.push({
+    routers[0].children.push({
       path: subMenu.path,
       name: subMenu.name,
       component: getComponent(subMenu.name)
@@ -40,6 +41,8 @@ nav.forEach((mod) => {
   })
 })
 
+
+console.log(routers)
 /**
  * 404页面
  * */

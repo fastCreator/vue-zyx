@@ -1,5 +1,5 @@
 <template>
-  <p-layout>
+  <div>
     <p-search
       ref="user"
       :search-rules="userRules"
@@ -73,7 +73,7 @@
         <el-button type="primary" @click="editFormVisible = false">确 定</el-button>
       </div>
     </el-dialog>
-  </p-layout>
+  </div>
 </template>
 
 <script>

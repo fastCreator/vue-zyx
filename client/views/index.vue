@@ -1,7 +1,5 @@
 <template>
-  <p-layout>
-    面板
-  </p-layout>
+  <p-layout></p-layout>
 </template>
 <script>
   export default {

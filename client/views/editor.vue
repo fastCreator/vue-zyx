@@ -1,5 +1,4 @@
 <template>
-  <p-layout>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item label="活动名称" prop="name">
         <el-input v-model="ruleForm.name"></el-input>
@@ -51,8 +50,6 @@
         <el-button @click="handleReset">重置</el-button>
       </el-form-item>
     </el-form>
-
-  </p-layout>
 </template>
 
 <script>

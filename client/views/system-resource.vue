@@ -1,57 +1,47 @@
 <template>
-  <p-layout>
-    <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
-  </p-layout>
+  <el-row class="">
+    <el-col :span="4">
+      <p-mtree :name="name" @itemClick="itemClick"></p-mtree>
+    </el-col>
+    <el-col :span="20">
+      <p-mtable></p-mtable>
+    </el-col>
+  </el-row>
 </template>
 <script>
   export default {
-    data() {
+    data () {
       return {
-        data: [{
-          label: '一级 1',
-          children: [{
-            label: '二级 1-1',
-            children: [{
-              label: '三级 1-1-1'
-            }]
-          }]
-        }, {
-          label: '一级 2',
-          children: [{
-            label: '二级 2-1',
-            children: [{
-              label: '三级 2-1-1'
-            }]
-          }, {
-            label: '二级 2-2',
-            children: [{
-              label: '三级 2-2-1'
-            }]
-          }]
-        }, {
-          label: '一级 3',
-          children: [{
-            label: '二级 3-1',
-            children: [{
-              label: '三级 3-1-1'
-            }]
-          }, {
-            label: '二级 3-2',
-            children: [{
-              label: '三级 3-2-1'
-            }]
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
+        name: {
+          en: '资源列表', cn: 'RESOURCES LIST'
         }
-      };
+      }
     },
+    watch: {},
+
     methods: {
-      handleNodeClick(data) {
-        console.log(data);
+      itemClick: function (data) {
+            console.log(data);
       }
     }
-  };
+  }
 </script>
+
+<style>
+  .el-row, .el-col {
+    height: 100%;
+  }
+
+  .el-row {
+    min-width: 1000px;
+  }
+
+  .mtree, .mtable {
+    height: 100%;
+    background: #FFFFFF;
+  }
+
+  .mtree {
+    margin-right: 10px;
+  }
+</style>
