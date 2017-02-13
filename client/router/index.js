@@ -8,6 +8,7 @@ import nav from '../config/nav'
 Vue.use(Router)
 
 const loginSuccess = (to, from, next) => {
+  console.log(1);
   if (auth.loggedIn()) {
     next({
       path: '/'
@@ -22,7 +23,7 @@ const routers = [
     path: '/',
     component: index
   },
-  {path: '/login', name:'login', component: login }
+  {path: '/login', name:'login',component: login, beforeEnter: loginSuccess  }
 ]
 
 /**
@@ -30,7 +31,6 @@ const routers = [
  * */
 nav.forEach((mod) => {
   const subMenus = mod.children
-
   subMenus.forEach((subMenu) => {
     routers.push({
       path: subMenu.path,

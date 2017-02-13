@@ -5,7 +5,7 @@
         <router-link class="full" to="/" v-if="!isCollapse">pAdmin</router-link>
         <span class="mini" v-else>P</span>
       </div>
-      <div class="p-layout-collapse" @click="toggleSider"><i class="fa fa-bars"></i></div>
+      <div class="p-layout-collapse" @click="toggleSider"><i class="iconfont icon-bar"></i></div>
       <div class="p-layout-nav">
         <el-dropdown class="is-user" @command="handleDropdown">
           <img src="../assets/avatar.jpg" class="p-layout-avatar" alt="">
@@ -35,14 +35,14 @@
             :index="menu.name"
             v-for="(menu, index) in menus">
             <template slot="title">
-              <i v-if="menu.icon" class="fa" :class="'fa-' + menu.icon"></i>
-              <span class="nav-next">\{{menu.text}}</span>
+              <i v-if="menu.icon" class="iconfont" :class="'icon-' + menu.icon"></i>
+              <span class="nav-next">{{menu.text}}</span>
             </template>
             <el-menu-item
               :index="subMenu.path"
               v-for="(subMenu, subIndex) in menu.children">
-              <i v-if="subMenu.icon" class="fa" :class="'fa-' + subMenu.icon"></i>
-              <span class="nav-next">\{{subMenu.text}}</span>
+              <i v-if="subMenu.icon" class="iconfont" :class="'icon-' + subMenu.icon"></i>
+              <span class="nav-next">{{subMenu.text}}</span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
@@ -121,9 +121,7 @@
   }
 
   .p-layout {
-
-  &
-  -topbar {
+    &-topbar {
     position: fixed;
     width: 100%;
     height: @top-height;
@@ -141,8 +139,7 @@
   }
 
   }
-  &
-  -name {
+  &-name {
     width: @sider-width;
     text-align: center;
     float: left;
@@ -150,8 +147,7 @@
     font-family: Helvetica;
     font-size: 30px;
 
-  &
-  .sider-mini {
+  &.sider-mini {
     width: @sider-collapse-width;
   }
 
@@ -163,8 +159,7 @@
   }
 
   }
-  &
-  -nav {
+  &-nav {
     float: right;
     padding-right: 10px;
 
@@ -187,28 +182,22 @@
   }
 
   }
-  &
-  -avatar {
+  &-avatar {
     border-radius: 50%;
     vertical-align: middle;
     cursor: pointer;
   }
-
-  &
-  -user {
+  &-user {
     padding: 20px;
     text-align: center;
     color: #fff;
-
   .p-layout-avatar {
     width: 64px;
     height: 64px;
     margin-bottom: 10px;
   }
-
   }
-  &
-  -sider {
+  &-sider {
     width: @sider-width;
     background-color: @black;
     position: fixed;
@@ -220,11 +209,7 @@
     overflow-x: hidden;
   }
 
-  &
-  -panel,
-
-  &
-  -content {
+  &-panel,&-content {
     position: absolute;
     left: 0;
     top: 0;
@@ -236,8 +221,7 @@
     width: auto;
   }
 
-  &
-  -collapse {
+  &-collapse {
     float: left;
     width: @top-height;
     cursor: pointer;
@@ -245,34 +229,24 @@
     text-align: center;
     color: #fff;
   }
-
-  &
-  -body {
+  &-body {
     position: absolute;
     width: 100%;
     top: @top-height;
     bottom: 0;
     z-index: 100;
-
-  &
-  .sider-full {
-
+  &.sider-full {
   .p-layout-panel {
     left: @sider-width;
   }
-
   }
-  &
-  .sider-mini {
-
+  &.sider-mini {
   .p-layout-panel {
     left: @sider-collapse-width;
   }
-
   .p-layout-sider {
     width: @sider-collapse-width;
   }
-
   .p-layout-user {
     display: none;
   }
@@ -283,9 +257,7 @@
   .nav-next {
     display: none;
   }
-
-  &
-  -item {
+  &-item {
     padding: 0 !important;
   }
 
@@ -296,34 +268,29 @@
   }
   }
   }
-  &
-  -content {
+  &-content {
     overflow-y: auto;
   }
 
-  &
-  -container {
+  &-container {
     padding: 15px;
   }
 
-  &
-  -inner {
+  &-inner {
     padding: 10px;
     background: #fff;
     border-radius: 3px;
     margin-top: 10px;
   }
 
-  &
-  -breadcrumb {
+  &-breadcrumb {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
     padding: 25px 15px;
     background-color: #fff;
     margin: -15px -15px 0 -15px;
   }
 
-  &
-  -footer {
+  &-footer {
     height: 64px;
     line-height: 64px;
     text-align: center;
@@ -335,23 +302,19 @@
     display: none;
   }
 
-  &
-  -header {
+  &-header {
     padding: 20px 10px;
     border-bottom: 1px solid #e9e9e9;
     background-color: @light-black;
 
-  &
-  :before,
+  &:before,
 
-  &
-  :after {
+  &:after {
     content: '';
     display: table;
   }
 
-  &
-  :after {
+  &:after {
     clear: both;
   }
 

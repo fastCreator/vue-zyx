@@ -7,7 +7,7 @@ const webpack = require('webpack')
 const webpackConfig = require('./webpack.dev')
 const config = require('./config')
 const LogPlugin = require('./log-plugin')
-
+const mock=require('../mock')
 const app = express()
 
 const port = config.port
@@ -41,7 +41,7 @@ const file = path.join(webpackConfig.output.path, 'index.html')
 
 
 devMiddleWare.waitUntilValid()
-
+app.use(mock);
 app.get('*', (req, res) => {
   devMiddleWare.waitUntilValid(() => {
     const html = mfs.readFileSync(file)

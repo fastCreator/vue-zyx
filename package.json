@@ -21,6 +21,7 @@
     "element-ui": "^1.1.6",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
+    "mockjs": "^1.0.1-beta3",
     "node-less": "^1.0.0",
     "node-sass": "^4.5.0",
     "promise-polyfill": "^6.0.2",

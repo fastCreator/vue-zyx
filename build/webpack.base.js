@@ -38,7 +38,7 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            less: 'vue-style-loader!css-loader!less-loader' // <style lang="scss">
+            less: 'vue-style-loader!css-loader!less-loader'
           }
         }
       },
@@ -52,12 +52,21 @@ module.exports = {
         loaders: ['babel-loader']
       },
       {
-        test: /\.(ico|jpg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
+        test: /\.(ico|jpg|png|gif|otf|webp)(\?.*)?$/,
         loader: 'file-loader',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
+      {
+        test: /\.(svg|ttf|eot|woff|woff2)$/,
+        loader: 'file-loader?name=fonts/[name].[hash].[ext]'
+      },
+      //{
+      //  test: /\.css$/,
+      //  exclude: /^node_modules$/,
+      //  loader: `style-loader!css-loader!autoprefixer-loader?{ browsers: ['last 100 versions'] }!`
+      //},
       {
         test: /\.svg$/,
         loader: 'raw-loader'
