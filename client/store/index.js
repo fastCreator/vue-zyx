@@ -1,33 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as actions from './actions'
+import * as getters from './getters'
+
+import resource from './modules/system/resource'
+//import products from './modules/products'
+//import createLogger from '../../../plugins/logger'
 
 Vue.use(Vuex)
 
-const state = {
-  count: 0
-}
+const debug = process.env.NODE_ENV !== 'production'
 
-const mutations = {
-  INCREMENT(state) {
-    state.count++
+export default new Vuex.Store({
+  actions,
+  getters,
+  modules: {
+    resource,
+    //products
   },
-  DECREMENT(state) {
-    state.count--
-  }
-}
-
-const actions = {
-  incrementAsync({commit}) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
-  }
-}
-
-const store = new Vuex.Store({
-  state,
-  mutations,
-  actions
+  strict: debug,
+  //plugins: debug ? [createLogger()] : []
 })
-
-export default store

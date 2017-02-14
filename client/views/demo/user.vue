@@ -77,7 +77,7 @@
 </template>
 
 <script>
-  import {getUserList} from '../api/user'
+  import {getUserList} from '../../api/demo/user'
 
   export default {
     data () {

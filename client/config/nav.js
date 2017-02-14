@@ -3,7 +3,7 @@ const nav = [
     name: 'demo',
     text: '演示',
     icon: 'shezhi',
-    path: '/user',
+    path: '/demo',
     children: [
       {
         name: 'user',
@@ -20,11 +20,11 @@ const nav = [
   }, {
     name: 'system',
     text: '系统',
-    icon: 'xitong',
-    path: '/system/resource',
+    icon: 'ziyuan',
+    path: '/system',
     children: [
       {
-        name: 'system-resource',
+        name: 'resource',
         path: '/system/resource',
         icon: 'ziyuan',
         text: '资源管理'

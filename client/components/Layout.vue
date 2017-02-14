@@ -2,8 +2,8 @@
   <div class="p-layout">
     <div class="p-layout-topbar clearfix">
       <div class="p-layout-name" :class="{'sider-mini': isCollapse}">
-        <router-link class="full" to="/" v-if="!isCollapse">pAdmin</router-link>
-        <span class="mini" v-else>P</span>
+        <router-link class="full" to="/" v-if="!isCollapse">zyx</router-link>
+        <span class="mini" v-else>Z</span>
       </div>
       <div class="p-layout-collapse" @click="toggleSider"><i class="iconfont icon-bar"></i></div>
       <div class="p-layout-nav">

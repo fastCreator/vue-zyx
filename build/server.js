@@ -9,7 +9,7 @@ const config = require('./config')
 const LogPlugin = require('./log-plugin')
 const mock=require('../mock')
 const app = express()
-
+const bodyParser = require('body-parser')
 const port = config.port
 webpackConfig.entry.client = [
   `webpack-hot-middleware/client?reload=true`,
@@ -41,6 +41,8 @@ const file = path.join(webpackConfig.output.path, 'index.html')
 
 
 devMiddleWare.waitUntilValid()
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(mock);
 app.get('*', (req, res) => {
   devMiddleWare.waitUntilValid(() => {

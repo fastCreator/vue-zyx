@@ -1,10 +1,7 @@
 import axios from 'axios'
 
 const handleStatus = (res) => {
-  return res.data
-}
-const handleResponse = (res) => {
-  if (res.result === 'success') {
+  if (res.status === 200) {
     return Promise.resolve(res.data)
   } else {
     return Promise.reject(res)
@@ -13,7 +10,7 @@ const handleResponse = (res) => {
 export default {
   get (url, params) {
     let queryString = []
-
+    if(params)
     Object.keys(params).forEach(key => params[key] && queryString.push(`${key}=${params[key]}`))
     if (queryString.length > 0) {
       queryString = queryString.join('&')
@@ -23,7 +20,6 @@ export default {
     return axios
       .get(url)
       .then(handleStatus)
-      .then(handleResponse)
       .catch(error => {
         console.log(error)
       })
@@ -33,7 +29,6 @@ export default {
     return axios
       .post(url, params)
       .then(handleStatus)
-      .then(handleResponse)
       .catch(error => {
         console.log(error)
       })

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '../views/index'
 import auth from '../auth'
-import login from '../views/login'
+import login from '../views/user/login'
 import nav from '../config/nav'
 
 Vue.use(Router)
@@ -17,7 +17,7 @@ const loginSuccess = (to, from, next) => {
     next()
   }
 }
-const getComponent = name => require(`../views/${name}.vue`)
+const getComponent = (parent,name) => require(`../views/${parent}/${name}.vue`)
 const routers = [
   {
     path: '/',
@@ -36,7 +36,7 @@ nav.forEach((mod) => {
     routers[0].children.push({
       path: subMenu.path,
       name: subMenu.name,
-      component: getComponent(subMenu.name)
+      component: getComponent(mod.name,subMenu.name)
     })
   })
 })
