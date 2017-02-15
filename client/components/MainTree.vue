@@ -1,8 +1,8 @@
 <template>
   <div class="mtree">
-    <div class="mTree-title-en">{{this.name.en}}</div>
-    <div class="mTree-title-cn">{{this.name.cn}}</div>
-    <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+    <div class="mTree-title-en">{{this.prop.en}}</div>
+    <div class="mTree-title-cn">{{this.prop.cn}}</div>
+    <el-tree v-bind="store" @node-click="itemClick"></el-tree>
   </div>
 </template>
 <script type="es6">
@@ -10,24 +10,17 @@
     name: 'p-mtree',
     data() {
       return {
-        //data:this.$store.state.resource.tree,
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        }
+
       };
     },
-    props: {
-      name: Object,
-      data:Array
-    },
-    watch:{
-      data:function(New,old){
-            console.log(New)
+    props: ['prop', 'store'],
+    watch: {
+      data: function (New, old) {
+        console.log(New)
       }
     },
     methods: {
-      handleNodeClick(data) {
+      itemClick(data) {
         this.$emit('itemClick', data)
       }
     }

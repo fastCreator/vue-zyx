@@ -42,3 +42,34 @@ vue:https://cn.vuejs.org/v2/guide/
 
 组件不应该存在store
 视图：可以存在store
+
+购物车 ：https://segmentfault.com/a/1190000005780326
+vuex:   https://segmentfault.com/a/1190000006981296
+
+Vue Tools  调试和工具,服务端渲染
+
+vue 和react比较
+
+为了让所有组件能够在任何地方被调用
+组件的属性，不能由自己决定，只能由调用它的组件或试图决定
+回调事件，由父组件传入
+
+原则:
+属性是不能改变的，就像人的头
+状态是可以变化的,分为本地状态(data)，和共享状态(store)
+本地状态：由自己维护
+共享状态：由store维护
+store:状态树
+
+
+我们用常量声明mutation，并把它放到单独的地方。mutation常量习惯性大写的，区分于actions。
+
+
+树的数据放在store
+表格的数据不放在store
+
+使用常量替代 Mutation 事件类型
+使 linter 之类的工具发挥作用
+
+关于vuex
+https://github.com/huangtubiao/vuex-example

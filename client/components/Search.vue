@@ -82,7 +82,6 @@
     methods: {
       fetch (data = {}) {
         const params = Object.assign(this.params, this.searchForm, data)
-
         this.fetchList(params).then(data => {
           this.tableData = data.listData
           this.totalCount = data.totalCount
