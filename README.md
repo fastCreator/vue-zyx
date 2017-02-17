@@ -1,8 +1,9 @@
- ## 技术栈
- vue + vuex + vue-loader + vue-router + webpack + mockJs + lodash
+## 技术栈
  
- ## 调试
- vue tools
+vue + vuex + vue-loader + vue-router + webpack + mockJs + lodash
+ 
+## 调试
+vue tools
  
  ## 文档
 - [vue](https://cn.vuejs.org/v2/guide/)
