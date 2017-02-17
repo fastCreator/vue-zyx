@@ -1,12 +1,8 @@
-var Mock = require('mockjs')
-
-module.exports = function (req, res, next) {
+module.exports = function (opt) {
   var data = {
-    totalCount: 100,
-    pageNo: req.query.pageNo,
-    pageSize: req.query.pageSize
+    totalCount: 100
   }
-  data['listData|' + (req.query.pageSize||30)] = [{
+  data['listData|30'] = [{
     id: '@id',
     data: '@time("yyyy-MM-dd")',
     'name': '@name',
@@ -19,6 +15,5 @@ module.exports = function (req, res, next) {
       })
     }
   }]
-  data = JSON.stringify(Mock.mock(data))
-  res.end(data)
+  return data;
 }

@@ -1,8 +1,26 @@
-var express = require('express');
-var router = express.Router();
+import Mock from 'mockjs'
 
-router.post('/login', require('./api/login.do.js'));
-router.get('/tree', require('./api/tree.do.js'));
-router.get('/table', require('./api/table.do.js'));
-router.get('/system', require('./api/list.do.js'));
-module.exports=router;
+/*设置请求时间*/
+Mock.setup({
+  timeout: '200-600'
+})
+
+/*生孩子*/
+createMock('/login','post', require('./api/login.do.js'))
+createMock('/tree', 'get', require('./api/tree.do'))
+createMock('/table', 'get', require('./api/table.do'))
+
+/*mock工厂*/
+function createMock(url, type, fuc) {
+  return function () {
+    Mock.mock(url, type, function (options) {
+      var data=Mock.mock(fuc(options))
+      console.info({
+        url: url,
+        type: type,
+        data: data
+      });
+      return data
+    });
+  }()
+}

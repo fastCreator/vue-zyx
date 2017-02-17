@@ -6,4 +6,7 @@ if (process.env.NODE_ENV === 'production') {
   require('./pwa')
 }
 
+require('../mock')
+
+
 app.$mount('#app')

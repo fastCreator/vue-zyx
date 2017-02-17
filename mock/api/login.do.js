@@ -1,7 +1,5 @@
-var Mock = require('mockjs')
-
-module.exports = function (req, res, next) {
-  var ps = req.body, data;
+module.exports = function (opt) {
+  var ps = JSON.parse(opt.body), data;
   if (ps.email === 'admin' && ps.pass === 'admin') {
     data = {
       authenticated: true,
@@ -10,7 +8,5 @@ module.exports = function (req, res, next) {
   } else {
     data = {authenticated: false}
   }
-  data = JSON.stringify(data);
-  res.status(200)
-  res.end(data)
+  return data;
 }

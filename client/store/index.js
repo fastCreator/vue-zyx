@@ -24,7 +24,7 @@ export default new Vuex.Store({
   },
   strict: debug,
   //plugins: debug ? [createLogger()] : []
-  plugins:[ localStorageState({
-    paths:['resource','routerPath']
-  })]
+  //plugins:[ localStorageState({
+  //  paths:['resource','routerPath']
+  //})]
 })
