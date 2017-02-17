@@ -1,3 +1,6 @@
+## 预览
+http://htmlpreview.github.io/?https://github.com/fastCreator/vue-zyx/blob/master/dist/index.html
+
 ## 技术栈
  
 vue + vuex + vue-loader + vue-router + webpack + mockJs + lodash
