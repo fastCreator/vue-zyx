@@ -6,7 +6,7 @@ module.exports = {
   title: 'starter',
   // when you use electron please set to relative path like ./
   // otherwise only set to absolute path when you're using history mode
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === 'production'?'./':'/',
   // add these dependencies to a standalone vendor bundle
   vendor: [
     'vue',

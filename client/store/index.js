@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
-import state from './state'
+import {state,mutations} from './state'
 
 import resource from './modules/system-resource'
 //import localStorageState from './localStorageState'
@@ -16,7 +16,8 @@ const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
   actions,
   getters,
-  ...state,
+  state,
+  mutations,
   modules: {
     resource
   },

@@ -3,13 +3,12 @@
 http://htmlpreview.github.io/?https://github.com/fastCreator/vue-zyx/blob/master/dist/index.html
 
 ## 技术栈
- 
-vue + vuex + vue-loader + vue-router + webpack + mockJs + element-UI
- 
-## 调试
+###开发栈
+vue + vuex + vue-loader + vue-router + webpack + mockJs + element-UI +axios
+###调试栈 
 vue tools
  
- ## 文档
+## 文档
 - [vue](https://cn.vuejs.org/v2/guide/)
 - [vuex](https://vuex.vuejs.org/zh-cn/state.html)
 - [vue-loader](http://vue-loader.vuejs.org/en/)
@@ -24,17 +23,28 @@ vue tools
 ## 目录结构
 
 ```bash
-├── app             # the actual app you want to bundle with Electron
-│    ├── dist       # directory which contains all bundled files
-│    └── index.js   # entry file for Electron
-├── build           # webpack configs and other scripts
-├── client          # client-side app files
-├── dist            # bundled files and index.html
-│    ├── index.html
-│    └── [...other bundled files]  
-├── tests           # e2e tests written by testcafe 
-├── node_modules    # dependencies
-└── package.json    # package info
+├── build                         # 打包配置文件 
+├── client                        # 客户端开发代码
+│    ├── api                     # ajax请求
+│    ├── components              # 组件
+│    ├── config                  # 前端配置文件
+│    │    └nav.js                 # nav配置文件  
+│    ├── router                  # 路由
+│    ├── store                   # vuex状态管理中心
+│    │    └modules                # 分组模块
+│    ├  view                       # 视图
+│    ├  app.js                     # 入口文件
+│    ├  app.vue                    # 入口模板
+│    └  auth.js                    # 用户鉴权
+├── dist                          # 打包静态文件 
+├── mock                          # 数据模拟 
+├── plugins                       # 开发辅助插件 
+├── static                        # 静态文件
+├── test                          # 测试
+├── theme                         # element UI 主题包 
+├── element-variables.css         # element UI 编辑文件
+├── node_modules                  # dependencies
+└── package.json                  # package info
 ```
 ## 运行
 ```bash
@@ -81,12 +91,21 @@ et
 回调事件，由父组件传入
 
 ## 开发原则
-属性是不能改变的，就像人的头
-状态是可以变化的,分为本地状态(data)，和共享状态(store)
-本地状态：由自己维护
-共享状态：由store维护
-store:状态树
+1,webpack包请求(require),前端模块化请求(es6)
+2,store:状态树
 我们用常量声明mutation，并把它放到单独的地方。mutation常量习惯性大写的，区分于actions。
  
+## 号外
+###组件
+```bash
+├── 状态                               # 状态可以改变
+│    ├── 本地状态(data)               # 组件内部数据,自己维护
+│    └── 共享状态(store)              # 组件之间共享的状态,相互影响,由store维护
+└── 属性                               # 属性不能改变
+
+组件:对象(电脑)
+属性:电脑必须由属性(显示器、鼠标、主机。。)构成（不能改变）
+状态:显示器状态(24寸，30寸)(可以改变)
+``` 
  
 
