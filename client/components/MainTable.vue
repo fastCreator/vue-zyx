@@ -1,13 +1,11 @@
 <template>
   <div class="MainTable">
+    <!--搜索-->
     <slot name="search"></slot>
+    <!--表格-->
     <el-table
       :data="store.data.listData"
       border
-      style="width: 100%;position: absolute;
-      top: 59px;
-      left: 16%;
-      bottom: 50px;"
       height="100%"
     >
       <template v-for="item in prop.header">
@@ -31,6 +29,17 @@
         </template>
       </el-table-column>
     </el-table>
+
+<!--分页-->
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage"
+      :page-sizes="[10, 50, 100, 200]"
+      :page-size="pageSize"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="store.data.totalCount">
+    </el-pagination>
   </div>
 </template>
 
@@ -38,9 +47,22 @@
   export default {
     name: 'p-mtable',
     props: ['prop', 'store'],
+    data () {
+      return {
+        currentPage:1,
+        pageSize:10
+      }
+    },
     methods: {
       hasItem: function (item, items) {
         return ~item.indexOf(items);
+      },
+      handleSizeChange:function(size){
+        this.pageSize=size;
+      this.$emit('handleSizeChange', size)
+      },
+      handleCurrentChange:function(data){
+        this.$emit('handleCurrentChange', data)
       }
     }
   }

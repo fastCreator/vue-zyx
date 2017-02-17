@@ -2,7 +2,7 @@
   <div class="p-layout">
     <div class="p-layout-topbar clearfix">
       <div class="p-layout-name" :class="{'sider-mini': isCollapse}">
-        <router-link class="full" to="/" v-if="!isCollapse">zyx</router-link>
+        <router-link class="full" to="/" v-if="!isCollapse">{{currentRoute}}</router-link>
         <span class="mini" v-else>Z</span>
       </div>
       <div class="p-layout-collapse" @click="toggleSider"><i class="iconfont icon-bar"></i></div>
@@ -61,7 +61,7 @@
     </div>
   </div>
 </template>
-<script>
+<script type="es6">
   import auth from '../auth'
   import menus from '../config/nav'
 
@@ -72,17 +72,15 @@
       return {
         loggedIn: auth.loggedIn(),
         menus,
-        currentRoute: this.$router.history.current.fullPath,
+
         isCollapse: false
       }
     },
-    created () {
-      auth.onChange = (loggedIn) =>
-      {
-        this.loggedIn = loggedIn
+    computed:{
+      currentRoute: function(){
+        return this.$store.state.routerPath
       }
     },
-
     methods: {
       toggleSider () {
         this.isCollapse = !this.isCollapse

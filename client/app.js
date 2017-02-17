@@ -14,6 +14,9 @@ import Editor from './components/Editor'
 import Mtree from './components/MainTree'
 import Mtable from './components/MainTable'
 
+//import _ from 'lodash'
+
+
 sync(store, router)
 
 Vue.use(ElementUI)
@@ -25,7 +28,7 @@ Vue.component(Mtree.name, Mtree)
 Vue.component(Mtable.name, Mtable)
 
 router.beforeEach((to, from, next) => {
-  console.log(to.name);
+  store.commit('SET_ROUTER',to.fullPath);
   if (!auth.loggedIn() && to.name !== 'login') {
     next({
       path: '/login',
