@@ -34,15 +34,12 @@ const state =
 // mutations
 const mutations = {
   [types.SET_TREE] (state, tree) {
-    console.log('SET_TREE');
     state.tree = tree
   },
   [types.SET_TABLE] (state, table) {
-    console.log('SET_TABLE');
     state.table = table
   },
   [types.SET_SEARCH] (state, str) {
-    console.log('SET_SEARCH');
     state.searchName = str + ''
   }
 }

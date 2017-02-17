@@ -1,9 +1,10 @@
+#vue项目全家桶
 ## 预览
 http://htmlpreview.github.io/?https://github.com/fastCreator/vue-zyx/blob/master/dist/index.html
 
 ## 技术栈
  
-vue + vuex + vue-loader + vue-router + webpack + mockJs + lodash
+vue + vuex + vue-loader + vue-router + webpack + mockJs + element-UI
  
 ## 调试
 vue tools
@@ -12,6 +13,7 @@ vue tools
 - [vue](https://cn.vuejs.org/v2/guide/)
 - [vuex](https://vuex.vuejs.org/zh-cn/state.html)
 - [vue-loader](http://vue-loader.vuejs.org/en/)
+- [element UI](http://element.eleme.io/#/zh-CN/component/installation)
 - [lodash](http://lodashjs.com/docs/)
 - [Vue Tools](https://github.com/vuejs/vue-devtools) 
 - [webstorm vue插件](http://www.cnblogs.com/ssrsblogs/p/6231981.html) 
@@ -49,15 +51,26 @@ vue tools
  $ npm run lint
 ```
  
-## 项目图标库
+## element-UI 自定义主题
+```bash
+###安装工具
+npm i element-theme -g
 
+###修改主题
+直接编辑 element-variables.css 文件
+
+###编译主题
+et
+``` 
+
+## 项目图标库
+```bash
 阿里图标库（智营销图标库）github登录
 账号：zyx11111111
 密码: zyx123456
 加入到我的收藏=》添加到我的项目(智营销)=>下载至本地
 替换到 static/fonts目录 
-
- 
+``` 
 
 ## 服务端渲染
  暂不考虑服务端渲染

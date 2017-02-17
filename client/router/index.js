@@ -8,7 +8,6 @@ import nav from '../config/nav'
 Vue.use(Router)
 
 const loginSuccess = (to, from, next) => {
-  console.log(1);
   if (auth.loggedIn()) {
     next({
       path: '/'
@@ -41,8 +40,6 @@ nav.forEach((mod) => {
   })
 })
 
-
-console.log(routers)
 /**
  * 404页面
  * */
