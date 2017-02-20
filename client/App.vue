@@ -24,6 +24,8 @@
     padding: 3px 5px;
     border-radius: 2px;
   }
-
+  }
+  .validate-error{
+    border: 1px solid red !important;
   }
 </style>

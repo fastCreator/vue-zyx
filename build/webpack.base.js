@@ -84,13 +84,19 @@ module.exports = {
       {
         from: _.cwd('./static'),
         // to the roor of dist path
-        to: './'
+        to: './assets/'
       }
     ]),
-    //new webpack.ProvidePlugin({
-    //  jQuery: "jquery",
-    //  $: "jquery"
-    //})
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'window.$': 'jquery',
+    }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../dist/vendor/vendor-manifest.json')
+    })
   ],
   target: _.target
 }

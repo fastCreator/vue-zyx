@@ -16,8 +16,7 @@ if (config.electron) {
   exec('rm -rf app/assets/')
 } else {
   // remove dist folder in web app mode
-  exec('rm -rf dist/')
-  // use source-map in web app mode
+  exec('rm -rf dist/assets/')
   base.devtool = 'source-map'
 }
 

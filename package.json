@@ -6,6 +6,7 @@
   "scripts": {
     "test": "testcafe ie tests/index.js  --app-init-delay 5000",
     "build": "set NODE_ENV=production&&webpack --config build/webpack.prod.js",
+    "dll": "webpack --config build/webpack.dll.js",
     "dev": "set NODE_ENV=development&&node build/server.js",
     "lint": "eslint client/* --ext .js --ext .vue",
     "et": "node_modules/.bin/et"

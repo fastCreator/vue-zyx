@@ -1,30 +1,24 @@
+import store from '../store'
+
 export default {
   name: 'validate',
   call: {
-    bind: function (el, binding, vnode) {
-      //var s = JSON.stringify
-      //el.innerHTML =
-      //  'name: '       + s(binding.name) + '<br>' +
-      //  'value: '      + s(binding.value) + '<br>' +
-      //  'expression: ' + s(binding.expression) + '<br>' +
-      //  'argument: '   + s(binding.arg) + '<br>' +
-      //  'modifiers: '  + s(binding.modifiers) + '<br>' +
-      //  'vnode keys: ' + Object.keys(vnode).join(', ')
-    },
     componentUpdated: function (el, binding, vnode) {
-      switch (binding.expression) {
-        case 'regex':
-          regex(el, binding, vnode);
-          break;
+      if(binding.modifiers['regex']){
+        regex(el, binding, vnode);
       }
     }
   }
 }
-
 function regex(el, binding, vnode) {
-  var input = el.getElementsByTagName('input')[0];
-  console.log(binding.value)
-  if (!input.value.match(binding.value)) {
-
+  var $input = $(el).find('input');
+  console.log(vnode);
+  console.log(vnode.context.$data.regex);
+  if (!$input.val().match(binding.value)) {
+    $input.addClass('validate-error')
+    store.validate=false;
+  }else{
+    $input.removeClass('validate-error')
+    store.validate=true;
   }
 }

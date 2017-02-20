@@ -21,6 +21,7 @@ velocityjs + animation.css
 - [关于vuex](https://github.com/huangtubiao/vuex-example)  
 - [animate.css](https://daneden.github.io/animate.css/)  
 - [velocityjs](https://github.com/shepherdwind/velocity.js/blob/master/README-cn.md)  
+- [Vue原理解析之Virtual Dom](http://www.tuicool.com/articles/ZNry6rj)  
  
 
 ## 目录结构

@@ -29,7 +29,7 @@
     name: 'login',
     data () {
       return {
-        regex:/^\d+$/,
+        regex:/^\w+$/,
         loginRule: {
           username: [
             {
