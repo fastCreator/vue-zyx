@@ -52,7 +52,12 @@
           <div class="p-layout-container">
 
             <div class="p-layout-inner">
-              <router-view></router-view>
+              <transition name="main"
+                          enter-active-class=""
+                          leave-active-class="animated bounceOutRight"
+              >
+                  <router-view></router-view>
+                </transition>
             </div>
           </div>
         </div>

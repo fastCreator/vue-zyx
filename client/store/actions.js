@@ -7,12 +7,14 @@ export const initTree = ({commit}, product) => {
   })
 }
 export const initTable = ({commit}, product) => {
+  commit(types.SET_LOADING, true);
   getTable(null).then(table => {
     commit(types.SET_TABLE, table)
   })
 }
 
 export const itemClick = ({commit}, product) => {
+  commit(types.SET_LOADING, true);
   getTable(null).then(table => {
     commit(types.SET_TABLE, table)
   })

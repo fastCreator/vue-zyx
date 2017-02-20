@@ -4,7 +4,7 @@
   "description": "My Superb Vue Project",
   "main": "client/index.js",
   "scripts": {
-    "test": "testcafe all tests/index.js --app \"npm run dev\" --app-init-delay 10000",
+    "test": "testcafe ie tests/index.js  --app-init-delay 5000",
     "build": "set NODE_ENV=production&&webpack --config build/webpack.prod.js",
     "dev": "set NODE_ENV=development&&node build/server.js",
     "lint": "eslint client/* --ext .js --ext .vue",
@@ -13,6 +13,7 @@
   "author": "fastCreator <237625092@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "async-validator": "^1.6.8",
     "axios": "^0.15.3",
     "babel-runtime": "^6.18.0",

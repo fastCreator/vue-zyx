@@ -43,7 +43,6 @@
               prop: 'delete',
               label: '删除',
               fuc: function (scope) {
-                console.log(scope)
                 alert('删除' + scope.$index);
               }
             },
@@ -77,7 +76,8 @@
         },
         tableData: state=> {
           return {
-            data: state.resource.table
+            data: state.resource.table,
+            loading:state.resource.loading
           }
         }
       })
@@ -128,7 +128,7 @@
   }
 
   .el-table {
-    position: absolute;
+    position: absolute !important;
     top: 50px;
     bottom: 50px;
     width: 83.33333%
@@ -139,7 +139,6 @@
     bottom: 8px;
     right: 8px;
   }
-
   }
   .el-row, .el-col {
     height: 100%;

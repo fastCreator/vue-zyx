@@ -4,6 +4,7 @@ const state =
 {
   tree: [],
   table: [],
+  loading:true,
   searchName: '',
   header: [
     {
@@ -38,6 +39,10 @@ const mutations = {
   },
   [types.SET_TABLE] (state, table) {
     state.table = table
+    state.loading =false;
+  },
+  [types.SET_LOADING] (state, bool) {
+    state.loading=bool;
   },
   [types.SET_SEARCH] (state, str) {
     state.searchName = str + ''

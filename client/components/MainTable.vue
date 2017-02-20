@@ -7,6 +7,8 @@
       :data="store.data.listData"
       border
       height="100%"
+      v-loading="store.loading"
+      element-loading-text="拼命加载中"
     >
       <template v-for="item in prop.header">
         <el-table-column
