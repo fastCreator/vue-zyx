@@ -8,7 +8,7 @@
       <div class="login-form">
         <el-form label-position="top" :model="loginForm" :rules="loginRule" ref="loginForm">
           <el-form-item prop="username">
-            <el-input placeholder="员工号" type="text" v-model="loginForm.username" auto-complete="off"></el-input>
+            <el-input v-validate.regex="regex" placeholder="员工号" type="text" v-model="loginForm.username" auto-complete="off"></el-input>
           </el-form-item>
           <el-form-item prop="pass">
             <el-input placeholder="密码" type="password" v-model="loginForm.pass" auto-complete="off"></el-input>
@@ -29,6 +29,7 @@
     name: 'login',
     data () {
       return {
+        regex:/^\d+$/,
         loginRule: {
           username: [
             {

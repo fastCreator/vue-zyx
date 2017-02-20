@@ -86,7 +86,11 @@ module.exports = {
         // to the roor of dist path
         to: './'
       }
-    ])
+    ]),
+    //new webpack.ProvidePlugin({
+    //  jQuery: "jquery",
+    //  $: "jquery"
+    //})
   ],
   target: _.target
 }

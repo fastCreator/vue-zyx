@@ -9,24 +9,12 @@ import router from './router'
 import store from './store'
 import auth from './auth'
 
-import Layout from './components/Layout'
-import Search from './components/Search'
-import Editor from './components/Editor'
-import Mtree from './components/MainTree'
-import Mtable from './components/MainTable'
-
-//import _ from 'lodash'
+import './directives'
+import './components'
 
 
 sync(store, router)
-
 Vue.use(ElementUI)
-
-Vue.component(Layout.name, Layout)
-Vue.component(Search.name, Search)
-Vue.component(Editor.name, Editor)
-Vue.component(Mtree.name, Mtree)
-Vue.component(Mtable.name, Mtable)
 
 router.beforeEach((to, from, next) => {
   store.commit('SET_ROUTER',to.fullPath);

@@ -1,6 +1,6 @@
 #vue项目全家桶
-## 预览
-http://htmlpreview.github.io/?https://github.com/fastCreator/vue-zyx/blob/master/dist/index.html
+## 查看
+
 
 ## 技术栈
 ###开发栈
@@ -32,6 +32,7 @@ velocityjs + animation.css
 │    ├── components              # 组件
 │    ├── config                  # 前端配置文件
 │    │    └nav.js                 # nav配置文件  
+│    ├── directives              # 自定义指令
 │    ├── router                  # 路由
 │    ├── store                   # vuex状态管理中心
 │    │    └modules                # 分组模块
