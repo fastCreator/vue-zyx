@@ -1,7 +1,9 @@
 #vue项目全家桶
 ## 查看
-
-
+git clone https://github.com/fastCreator/vue-zyx
+进入打包后文件/dist/assets/index.html 就可以查看
+账号:admin
+密码:admin
 ## 技术栈
 ###开发栈
 vue + vuex + vue-loader + vue-router + webpack + mockJs + element-UI +axios 
@@ -22,6 +24,9 @@ velocityjs + animation.css
 - [animate.css](https://daneden.github.io/animate.css/)  
 - [velocityjs](https://github.com/shepherdwind/velocity.js/blob/master/README-cn.md)  
 - [Vue原理解析之Virtual Dom](http://www.tuicool.com/articles/ZNry6rj)  
+
+## 插件
+- [vue-fullcalendar](https://github.com/Wanderxx/vue-fullcalendar)  
  
 
 ## 目录结构
@@ -80,8 +85,7 @@ et
 ## 项目图标库
 ```bash
 阿里图标库（智营销图标库）github登录
-账号：zyx11111111
-密码: zyx123456
+
 加入到我的收藏=》添加到我的项目(智营销)=>下载至本地
 替换到 static/fonts目录 
 ``` 
