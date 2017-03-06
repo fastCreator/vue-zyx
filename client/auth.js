@@ -2,6 +2,7 @@ import { login } from './api/user/login'
 
 
 export default {
+
   login (email, pass, cb) {
     cb = arguments[arguments.length - 1]
     if (localStorage.token) {
@@ -9,6 +10,7 @@ export default {
       this.onChange(true)
       return
     }
+
     login(email, pass).then((res)=>{
       console.log(res);
       if (res.authenticated) {
@@ -37,4 +39,5 @@ export default {
   },
 
   onChange () {}
+
 }

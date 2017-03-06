@@ -39,7 +39,6 @@ export default function createLogger ({
       } catch (e) {
         console.log('—— log end ——')
       }
-
       prevState = nextState
     })
   }

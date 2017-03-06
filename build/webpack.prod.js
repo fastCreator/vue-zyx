@@ -21,9 +21,9 @@ if (config.electron) {
 }
 
 // a white list to awdd dependencies to vendor chunk
-base.entry.vendor = config.vendor
+/*base.entry.vendor = config.vendor
 // use hash filename to support long-term caching
-base.output.filename = '[name].[chunkhash:8].js'
+base.output.filename = '[name].[chunkhash:8].js'*/
 // add webpack plugins
 base.plugins.push(
   new ProgressPlugin(),
@@ -41,10 +41,10 @@ base.plugins.push(
     }
   }),
   // extract vendor chunks
-  new webpack.optimize.CommonsChunkPlugin({
+  /*new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
     filename: 'vendor.[chunkhash:8].js'
-  }),
+  }),*/
   // progressive web app
   // it uses the publicPath in webpack config
   new OfflinePlugin({

@@ -91,7 +91,13 @@ et
 ``` 
 
 ## 服务端渲染
- 暂不考虑服务端渲染
+ 暂不考虑服务端渲染,-[文档](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer)
+
+## mock
+打包进入前端，截断ajax请求，前后端分离
+
+## vuex自定义插件
+选择性存储状态进入默认localStorage，get/set
 
 ## 简介
 Vue.js是当下很火的一个JavaScript MVVM库，它是以数据驱动和组件化的思想构建的。相比于Angular.js，Vue.js提供了更加简洁、更易于理解的API，使得我们能够快速地上手并使用Vue.js。
@@ -103,11 +109,52 @@ Vue.js是当下很火的一个JavaScript MVVM库，它是以数据驱动和组�
 4,React使用 Virtual DOM，用diff算法更新视图；vue:使用get/set事件响应更新视图
 5,React做数据比较庞大页面有性能优势
 
-## 开发
-1,webpack包请求(require),前端模块化请求(es6)
-2,为了让所有组件能够在任何地方被调用,组件的属性，不能由自己决定，只能由调用它的组件或试图决定,回调事件，由父组件传入
-3,我们用常量声明mutation，并把它放到单独的地方。mutation常量习惯性大写的，区分于actions。
-4,组件命名约定(在 HTML 模版中，请使用 kebab-case 形式)
+## 开发规范
+###命名规范
+1,Css样式名称、Less样式名称等以小写字母,多个单词间用下划线连接,如:body_class
+2,Css文件名称,以小写字母命名,多个单词间用点或者中划线连接,如:animate.min.css,animate-min.css
+3,Html文件名称,以小写字母命名,多个单词间用点连接,如:system.setting.html
+4,Js变量名、函数名、Id等使用驼峰命名法,如:getElementById() 
+5,图片名称以小写字母,多个单词间用下划线连接,如:body_background.jpg 
+6,组件命名约定(在 HTML 模版中，请使用 kebab-case 形式)
+7,路由地址统一使用小写字母命名 
+###编码
+1,设置webstorm的文件编码为UTF-8,设置方法:File->Settings->File Encoding->Project Encoding及Default encoding for properties files为UTF-8
+2,JS尽量写单引号，html尽量双引号
+3,语句结尾不需要写封号，让JS自动识别
+4,添加'use strict';严谨模式开发代码
+5,所有的待删除代码统一使用双斜杠进行注释,不管是单行还是多行。尽量少使用带*号的代码注释,带*的注释为功能或方法的说明使用
+6,方法注释名称
+      /**
+       * 方法或者代码作用说明 
+       * @param 代码参数说明,每个参数独占一行
+       * @returns 如果有返回值,说明返回值内容
+       * @author 开发者署名
+       * @time 编写或者修改时间
+       */
+7,多个变量一同申明时,使用一个var关键字 
+      var a;
+      var b;
+      var c=1;
+      写成:
+      var a,b,c=1;
+###vue
+1.为了让所有组件能够在任何地方被调用,组件的属性，不能由自己决定，只能由调用它的组件或试图决定,回调事件，由父组件传入
+2.我们用常量声明mutation，并把它放到单独的地方。mutation常量习惯性大写的，区分于actions。
+### [jsdoc](http://ask.dcloud.net.cn/article/129)
+[jsdoc](http://ask.dcloud.net.cn/article/129)规范
+@alias aliasName
+@constructor
+@description
+@example
+@extends
+@param
+@property
+@return
+@type
+
+
+
 ## 号外
 ###优化
 ####keep-alive
