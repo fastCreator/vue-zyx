@@ -111,20 +111,21 @@ Vue.js是当下很火的一个JavaScript MVVM库，它是以数据驱动和组�
 
 ## 开发规范
 ###命名规范
-1,Css样式名称、Less样式名称等以小写字母,多个单词间用下划线连接,如:body_class
-2,Css文件名称,以小写字母命名,多个单词间用点或者中划线连接,如:animate.min.css,animate-min.css
-3,Html文件名称,以小写字母命名,多个单词间用点连接,如:system.setting.html
-4,Js变量名、函数名、Id等使用驼峰命名法,如:getElementById() 
-5,图片名称以小写字母,多个单词间用下划线连接,如:body_background.jpg 
-6,组件命名约定(在 HTML 模版中，请使用 kebab-case 形式)
-7,路由地址统一使用小写字母命名 
+1,Css样式名称、Less样式名称等以小写字母,多个单词间用下划线连接,如:body_class<br />
+2,Css文件名称,以小写字母命名,多个单词间用点或者中划线连接,如:animate.min.css,animate-min.css<br />
+3,Html文件名称,以小写字母命名,多个单词间用点连接,如:system.setting.html<br />
+4,Js变量名、函数名、Id等使用驼峰命名法,如:getElementById() <br />
+5,图片名称以小写字母,多个单词间用下划线连接,如:body_background.jpg <br />
+6,组件命名约定(在 HTML 模版中，请使用 kebab-case 形式)<br />
+7,路由地址统一使用小写字母命名 <br />
 ###编码
-1,设置webstorm的文件编码为UTF-8,设置方法:File->Settings->File Encoding->Project Encoding及Default encoding for properties files为UTF-8
-2,JS尽量写单引号，html尽量双引号
-3,语句结尾不需要写封号，让JS自动识别
-4,添加'use strict';严谨模式开发代码
-5,所有的待删除代码统一使用双斜杠进行注释,不管是单行还是多行。尽量少使用带*号的代码注释,带*的注释为功能或方法的说明使用
-6,方法注释名称
+1,设置webstorm的文件编码为UTF-8,设置方法:File->Settings->File Encoding->Project Encoding及Default encoding for properties files为UTF-8<br />
+2,JS尽量写单引号，html尽量双引号<br />
+3,语句结尾不需要写封号，让JS自动识别<br />
+4,添加'use strict';严谨模式开发代码<br />
+5,所有的待删除代码统一使用双斜杠进行注释,不管是单行还是多行。尽量少使用带*号的代码注释,带*的注释为功能或方法的说明使用<br />
+6,方法注释名称<br />
+  ```bash
       /**
        * 方法或者代码作用说明 
        * @param 代码参数说明,每个参数独占一行
@@ -132,26 +133,29 @@ Vue.js是当下很火的一个JavaScript MVVM库，它是以数据驱动和组�
        * @author 开发者署名
        * @time 编写或者修改时间
        */
+   ```    
 7,多个变量一同申明时,使用一个var关键字 
+      ```bash
       var a;
       var b;
       var c=1;
       写成:
       var a,b,c=1;
+      ```
 ###vue
-1.为了让所有组件能够在任何地方被调用,组件的属性，不能由自己决定，只能由调用它的组件或试图决定,回调事件，由父组件传入
-2.我们用常量声明mutation，并把它放到单独的地方。mutation常量习惯性大写的，区分于actions。
-### [jsdoc](http://ask.dcloud.net.cn/article/129)
-[jsdoc](http://ask.dcloud.net.cn/article/129)规范
-@alias aliasName
-@constructor
-@description
-@example
-@extends
-@param
-@property
-@return
-@type
+1.为了让所有组件能够在任何地方被调用,组件的属性，不能由自己决定，只能由调用它的组件或试图决定,回调事件，由父组件传入<br />
+2.我们用常量声明mutation，并把它放到单独的地方。mutation常量习惯性大写的，区分于actions。<br />
+### [jsdoc](http://ask.dcloud.net.cn/article/129)<br />
+[jsdoc](http://ask.dcloud.net.cn/article/129)规范<br />
+@alias aliasName<br />
+@constructor<br />
+@description<br />
+@example<br />
+@extends<br />
+@param<br />
+@property<br />
+@return<br />
+@type<br />
 
 
 
