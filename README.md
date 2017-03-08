@@ -179,8 +179,35 @@ Vue.js是当下很火的一个JavaScript MVVM库，它是以数据驱动和组�
 状态:显示器状态(24寸，30寸)(可以改变)
 ``` 
  
+##测试
+1,TDD指的是Test Drive Development，很明显的意思是测试驱动开发
+2,BDD指的是Behavior Drive Development，也就是行为驱动开发
+3,DDD指的是Domain Drive Design，也就是领域驱动开发。
+###单元测试
+常用框架:Jasmine,mocha,qunit
 
- 
+###自动化集成化测试
+casperJS基于PhantomJS或SlimerJS(PhantomJS或SlimerJS都是用于web测试的自动化无界面浏览器)，可以模拟完成页面内系统级的自动化操作行为测试。<br/>
+nightmare也是一个模拟还原浏览器上业务操作的强大工具，而且更易于使用。同时可以使用chrome的插件daydreem自动录制生成用户行为操作的事件序列，更加方便我们进行实际的测试。<br/>
+Nightwatch则可以使用node书写端对端的测试用例，并在Selenium server服务端运行测试，同样支持同步和异步。<br/>
+DalekJS是一个跨浏览器平台的前端集成测试框架，可以自动配置启动本地的浏览器，也可以模拟填写提交表单、点击、截屏、运行单元测试等丰富的操作。<br/>
+TestCafe自动化浏览器测试工具 
+karam
+###断言
+chai
+
+
+
+测试框架
+
+
+###mocha
+测试框架
+###chai
+测试断言库
+###mock
+模拟数据 
+
 ###pakage.json
 ```bash
 npm install 
